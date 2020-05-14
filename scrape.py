@@ -13,7 +13,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-apiKey = 'AIzaSyDvLJgqSzJuLHwrT0uyAsDUbvrFxIGSd3I'
 
 clinicaInstagram = requests.get('https://www.instagram.com/theclinica/')
 clinicaFacebook  = requests.get('https://www.facebook.com/THECLINICA.CA/')
