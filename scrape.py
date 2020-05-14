@@ -10,9 +10,21 @@
 
 # #
 
+import re
 import requests
 from bs4 import BeautifulSoup
+import os
+from dotenv import load_dotenv
+from pathlib import Path
 
+load_dotenv()
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
+api_key = os.getenv('API_KEY')
+channel_id = os.getenv('CHANNEL_ID')
+
+# print(api_key)
+# print(channel_id)
 
 clinicaInstagram = requests.get('https://www.instagram.com/theclinica/')
 clinicaFacebook  = requests.get('https://www.facebook.com/THECLINICA.CA/')
@@ -31,16 +43,17 @@ def getInstagramData(url):
     user = '%s %s %s' % (text[-3], text[-2], text[-1])
     followers = text[0]
 
-    print(user)
-    print('Instagram Followers: \n', followers)
+    print('\n' + user)
+    print('Instagram Followers: ', followers)
 
 def getFacebookData(url):
     soup  = BeautifulSoup(url.text, 'lxml')
 
-    data  = soup.find('div', attrs={'class': '_4-u3 _5sqi _5sqk'})
-    likes = data.find('span', attrs={'class':'_52id _50f5 _50f7'}) #finding span tag inside class
-    
-    print('Facebook Likes: \n', likes.text)
+    likes   = soup.find("div",text=re.compile('people like this')).text
+    follows = soup.find("div",text=re.compile('people follow this')).text
+
+    print('Facebook Likes: '     + likes.split()[0])
+    print('Facebook Followers: ' + follows.split()[0])
 
 # Pull subscribers from youtube
 def getYoutubeData(url):
@@ -49,14 +62,11 @@ def getYoutubeData(url):
     data = soup.find('div', attrs={'class': '"style-scope ytd-c4-tabbed-header-renderer', "id": "subscriber-count"})
     
     print(data)
-    # subs = data.find('div#description', attrs={'class': 'yt-formatted-string'}) "class": "style-scope ytd-c4-tabbed-header-renderer"
-
-    # print('Youtube Subsribers: ', subs)
 
 
-# getInstagramData(clinicaInstagram)
-# getFacebookData(clinicaFacebook)
-getYoutubeData(clinicaYoutube)
+getInstagramData(clinicaInstagram)
+getFacebookData(clinicaFacebook)
+# getYoutubeData(clinicaYoutube)
 
-# getInstagramData(voirInstagram)
-# getFacebookData(voirFacebook)
+getInstagramData(voirInstagram)
+getFacebookData(voirFacebook)
