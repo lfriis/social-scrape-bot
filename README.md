@@ -1,2 +1,2 @@
 # Social Scrape
- Used to collect and dumb social data into Google Drive
+ Used to collect and dump social data into Google Drive
