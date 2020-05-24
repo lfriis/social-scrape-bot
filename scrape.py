@@ -1,5 +1,7 @@
 # #
 
+# SOCIAL SCRAPE
+
 # Get instagram followers for both platforms
 #     Get likes and comments on a monthly basis
 # Get facebok followers and page likes and check-ins for both
@@ -10,6 +12,8 @@
 
 # #
 
+import json
+import urllib.request
 import re
 import requests
 from bs4 import BeautifulSoup
@@ -17,56 +21,72 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 
+# Pulling sensitive keys from .env file
 load_dotenv()
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
+
 api_key = os.getenv('API_KEY')
 channel_id = os.getenv('CHANNEL_ID')
 
-# print(api_key)
-# print(channel_id)
-
-clinicaInstagram = requests.get('https://www.instagram.com/theclinica/')
+clinicaInstagram = 'https://www.instagram.com/theclinica/?__a=1'
 clinicaFacebook  = requests.get('https://www.facebook.com/THECLINICA.CA/')
-clinicaYoutube   = requests.get('https://www.youtube.com/channel/UC4XA4xDLyFRWQSJUs2E7EKw')
+clinicaAPIKey    = os.getenv('CLINICA_API_KEY')
+clinicaChannelID = os.getenv('CLINICA_CHANNEL_ID')
 
-voirInstagram    = requests.get('https://www.instagram.com/voirhaircare/')
+voirInstagram    = 'https://www.instagram.com/voirhaircare/?__a=1'
 voirFacebook     = requests.get('https://www.facebook.com/voirhaircare/')
-voirYoutube      = requests.get('https://www.youtube.com/channel/UCdYK8aiJppxvhsdbcdISvEg')
+voirAPIKey       = os.getenv('VOIR_API_KEY')
+voirChannelID    = os.getenv('VOIR_CHANNEL_ID')
 
 def getInstagramData(url):
-    soup = BeautifulSoup(url.text, 'lxml')
 
-    data = soup.find_all('meta', attrs={'property':'og:description'})
-    text = data[0].get('content').split()
+    json_url = urllib.request.urlopen(url)
+    data     = json.loads(json_url.read())
 
-    user = '%s %s %s' % (text[-3], text[-2], text[-1])
-    followers = text[0]
-
-    print('\n' + user)
-    print('Instagram Followers: ', followers)
+    followerCount  = data['graphql']['user']['edge_followed_by']['count']
+    followingCount = data['graphql']['user']['edge_follow']['count']
+    postCount      = data['graphql']['user']['edge_owner_to_timeline_media']['count']
+    
+    print('\nINSTAGRAM DATA')
+    print('Total Following: '     + str(followingCount))
+    print('Total followerCount: ' + str(followerCount))
+    print('Total Posts: '         + str(postCount))
 
 def getFacebookData(url):
     soup  = BeautifulSoup(url.text, 'lxml')
 
-    likes   = soup.find("div",text=re.compile('people like this')).text
-    follows = soup.find("div",text=re.compile('people follow this')).text
+    likeCount   = soup.find("div", text = re.compile('people like this')).text
+    followCount = soup.find("div", text = re.compile('people follow this')).text
 
-    print('Facebook Likes: '     + likes.split()[0])
-    print('Facebook Followers: ' + follows.split()[0])
+    print('\nFACEBOOK DATA')
+    print('Facebook Likes: '     + likeCount.split()[0])
+    print('Facebook Followers: ' + followCount.split()[0])
 
-# Pull subscribers from youtube
-def getYoutubeData(url):
-    soup = BeautifulSoup(url.text, 'lxml')
+# Pull reporting data from youtube
+def getYoutubeData(channel_id, api_key):
+    request = "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + channel_id + "&key=" + api_key
 
-    data = soup.find('div', attrs={'class': '"style-scope ytd-c4-tabbed-header-renderer', "id": "subscriber-count"})
-    
-    print(data)
+    json_url = urllib.request.urlopen(request)
+    data     = json.loads(json_url.read())
 
+    viewCount        = data['items'][0]['statistics']['viewCount']
+    commentCount     = data['items'][0]['statistics']['commentCount']
+    subscriberCount  = data['items'][0]['statistics']['subscriberCount']
+    videoCount       = data['items'][0]['statistics']['videoCount']
+
+    print('\nYOUTUBE DATA ')
+    print('Total Views:        ' + viewCount)
+    print('Total Comments:     ' + commentCount)
+    print('Total Subscribers:  ' + subscriberCount)
+    print('Total Videos:       ' + videoCount)
 
 getInstagramData(clinicaInstagram)
 getFacebookData(clinicaFacebook)
-# getYoutubeData(clinicaYoutube)
 
 getInstagramData(voirInstagram)
 getFacebookData(voirFacebook)
+
+getYoutubeData(channel_id, api_key)
+# getYoutubeData(clinicaChannelID, clinicaAPIKey)
+# getYoutubeData(voirChannelID, voirAPIKey)
