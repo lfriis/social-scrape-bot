@@ -10,6 +10,8 @@
 
 # Run everyday before 9AM
 
+# Install google drive requirements: pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+
 # #
 
 import json
@@ -18,6 +20,7 @@ import re
 import requests
 from bs4 import BeautifulSoup
 import os
+import datetime
 from dotenv import load_dotenv
 from pathlib import Path
 
@@ -29,8 +32,11 @@ load_dotenv(dotenv_path=env_path)
 api_key = os.getenv('API_KEY')
 channel_id = os.getenv('CHANNEL_ID')
 
+date = datetime.datetime.utcnow()
+
 clinicaInstagram = 'https://www.instagram.com/theclinica/?__a=1'
 clinicaFacebook  = requests.get('https://www.facebook.com/THECLINICA.CA/')
+clinicaTikTok    = 'https://vm.tiktok.com/wgt5V8/'
 clinicaAPIKey    = os.getenv('CLINICA_API_KEY')
 clinicaChannelID = os.getenv('CLINICA_CHANNEL_ID')
 
@@ -39,6 +45,7 @@ voirFacebook     = requests.get('https://www.facebook.com/voirhaircare/')
 voirAPIKey       = os.getenv('VOIR_API_KEY')
 voirChannelID    = os.getenv('VOIR_CHANNEL_ID')
 
+# Scraping Instagram JSON result
 def getInstagramData(url):
 
     json_url = urllib.request.urlopen(url)
@@ -53,6 +60,7 @@ def getInstagramData(url):
     print('Total followerCount: ' + str(followerCount))
     print('Total Posts: '         + str(postCount))
 
+# Scraping Facebook page
 def getFacebookData(url):
     soup  = BeautifulSoup(url.text, 'lxml')
 
@@ -63,7 +71,7 @@ def getFacebookData(url):
     print('Facebook Likes: '     + likeCount.split()[0])
     print('Facebook Followers: ' + followCount.split()[0])
 
-# Pull reporting data from youtube
+# Pull reporting data from YouTube API
 def getYoutubeData(channel_id, api_key):
     request = "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + channel_id + "&key=" + api_key
 
@@ -80,6 +88,9 @@ def getYoutubeData(channel_id, api_key):
     print('Total Comments:     ' + commentCount)
     print('Total Subscribers:  ' + subscriberCount)
     print('Total Videos:       ' + videoCount)
+
+print('\n')
+print('AS OF: ' + str(date))
 
 getInstagramData(clinicaInstagram)
 getFacebookData(clinicaFacebook)
