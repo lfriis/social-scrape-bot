@@ -27,7 +27,6 @@ from oauth2client.service_account import ServiceAccountCredentials
 load_dotenv()
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
-
 api_key = os.getenv('API_KEY')
 channel_id = os.getenv('CHANNEL_ID')
 
@@ -64,10 +63,14 @@ def getInstagramData(account, url):
     followerCount  = data['graphql']['user']['edge_followed_by']['count']
     postCount      = data['graphql']['user']['edge_owner_to_timeline_media']['count']
     
-    print('\nINSTAGRAM DATA FOR ' + account)
-    print('Total Following: '      + str(followingCount))
-    print('Total followerCount: '  + str(followerCount))
-    print('Total Posts: '          + str(postCount))
+    instagramData = [followerCount, postCount]
+
+    return instagramData
+
+    # print('\nINSTAGRAM DATA FOR ' + account)
+    # print('Total Following: '      + str(followingCount))
+    # print('Total Followers: '      + str(followerCount))
+    # print('Total Posts: '          + str(postCount))
 
 # Scraping Facebook page
 def getFacebookData(account, url):
@@ -128,10 +131,10 @@ clinicaRow = [str(date),
 
 # look into getting youtube comments
 
-# google_sheet.append_row(clinicaRow)
+google_sheet.append_row(clinicaRow)
 
-# print("[{}] records inserted on {}...  \n".format(len(clinicaRow), date))
-# print("It took [{}] seconds to execute...\n".format(round(time.time() - start, 2)))
+print("[{}] records inserted on {}...  \n".format(len(clinicaRow), date))
+print("It took [{}] seconds to execute...\n".format(round(time.time() - start, 2)))
 
 
 # getInstagramData(clinica, clinicaInstagram)
