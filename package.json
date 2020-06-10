@@ -1,0 +1,25 @@
+{
+  "name": "social-scrape-bot",
+  "version": "1.0.0",
+  "description": "Used to collect and dump social data into Google Drive",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lfriis/Social-Scrape-Bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lfriis/Social-Scrape-Bot/issues"
+  },
+  "homepage": "https://github.com/lfriis/Social-Scrape-Bot#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-cron": "^2.0.3",
+    "shelljs": "^0.8.4"
+  }
+}

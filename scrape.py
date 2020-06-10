@@ -35,10 +35,12 @@ scope  = ["https://spreadsheets.google.com/feeds","https://www.googleapis.com/au
 creds  = ServiceAccountCredentials.from_json_keyfile_name("google_drive_secret.json")
 client = gspread.authorize(creds)
 
+newDate  = datetime.datetime.now()
 date  = datetime.date.today()
 start = time.time()
 
-google_sheet = client.open('Social Scrape Test').sheet1
+clinica_google_sheet = client.open('Social Scrape Test').get_worksheet(0)
+voir_google_sheet    = client.open('Social Scrape Test').get_worksheet(1)
 
 # Setting up Social Media URLs
 clinica          = "THE CLINICA"
@@ -54,7 +56,7 @@ voirFacebook     = requests.get('https://www.facebook.com/voirhaircare/')
 voirAPIKey       = os.getenv('VOIR_API_KEY')
 voirChannelID    = os.getenv('VOIR_CHANNEL_ID')
 
-# Scraping Instagram JSON result
+# Scraping Instagram JSON result for data
 def getInstagramData(account, url):
 
     json_url = urllib.request.urlopen(url)
@@ -104,10 +106,10 @@ def getYoutubeData(account, channel_id, api_key):
     return youtubeData
 
     # print('\nYOUTUBE DATA FOR '  + account)
-    # print('Total Views:        ' + dataArray[0])
-    # print('Total Comments:     ' + dataArray[1])
-    # print('Total Subscribers:  ' + dataArray[2])
-    # print('Total Videos:       ' + dataArray[3])
+    # print('Total Views:        ' + viewCount)
+    # print('Total Comments:     ' + commentCount)
+    # print('Total Subscribers:  ' + subscriberCount)
+    # print('Total Videos:       ' + videoCount)
 
 
 # def getTikTok(account, url):
@@ -129,13 +131,23 @@ clinicaRow = [str(date),
                 getYoutubeData   (clinica, clinicaChannelID, clinicaAPIKey)[2], getYoutubeData(clinica, clinicaChannelID, clinicaAPIKey)[3]
              ]
 
+voirRow    = [str(date), 
+                getInstagramData (voir, voirInstagram)[0], " ", getInstagramData(voir, voirInstagram)[1],
+                getFacebookData  (voir, voirFacebook)[0],  getFacebookData (voir, voirFacebook)[1],
+                getYoutubeData   (voir, voirChannelID, voirAPIKey)[0], getYoutubeData(voir, voirChannelID, voirAPIKey)[1],
+                getYoutubeData   (voir, voirChannelID, voirAPIKey)[2], getYoutubeData(voir, voirChannelID, voirAPIKey)[3]
+             ]
+
 # look into getting youtube comments
 
-# google_sheet.append_row(clinicaRow)
+# Appending new data to each googlesheet
+clinica_google_sheet.append_row(clinicaRow)
+voir_google_sheet.append_row(voirRow)
 
-# print("[{}] records inserted on {}...  \n".format(len(clinicaRow), date))
-# print("It took [{}] seconds to execute...\n".format(round(time.time() - start, 2)))
+print("\n[{}] records inserted into {} on {}...".format(len(clinicaRow), clinica, newDate))
+print("\n[{}] records inserted into {} on {}...\n".format(len(voirRow), voir, newDate))
 
+print("It took [{}] seconds to execute...\n".format(round(time.time() - start, 2)))
 
 # getInstagramData(clinica, clinicaInstagram)
 # getFacebookData (clinica, clinicaFacebook)
