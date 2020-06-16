@@ -1,13 +1,5 @@
 # SOCIAL SCRAPE
 
-# Get instagram followers for both platforms
-#     Get likes and comments on a daily basis
-# Get facebook followers and page likes and check-ins for both
-# Get youtube subscribers
-# Get tiktok followers and likes for both
-
-# Run everyday before 9AM
-
 # Install google drive requirements: pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 
 import json
@@ -69,11 +61,6 @@ def getInstagramData(account, url):
 
     return instagramData
 
-    # print('\nINSTAGRAM DATA FOR ' + account)
-    # print('Total Following: '      + str(followingCount))
-    # print('Total Followers: '      + str(followerCount))
-    # print('Total Posts: '          + str(postCount))
-
 # Scraping Facebook page
 def getFacebookData(account, url):
     soup  = BeautifulSoup(url.text, 'lxml')
@@ -85,10 +72,6 @@ def getFacebookData(account, url):
 
     return facebookData
 
-    # print('\nFACEBOOK DATA FOR ' + account)
-    # print('Likes: '              + likeCount)
-    # print('Followers: '          + followCount)
-
 # Pull reporting data from YouTube API
 def getYoutubeData(account, channel_id, api_key):
     request = "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + channel_id + "&key=" + api_key
@@ -97,48 +80,27 @@ def getYoutubeData(account, channel_id, api_key):
     data     = json.loads(json_url.read())
 
     viewCount        = data['items'][0]['statistics']['viewCount']
-    commentCount     = data['items'][0]['statistics']['commentCount']
     subscriberCount  = data['items'][0]['statistics']['subscriberCount']
     videoCount       = data['items'][0]['statistics']['videoCount']
 
-    youtubeData = [subscriberCount, viewCount, commentCount, videoCount]
+    youtubeData = [subscriberCount, viewCount, videoCount]
 
     return youtubeData
-
-    # print('\nYOUTUBE DATA FOR '  + account)
-    # print('Total Views:        ' + viewCount)
-    # print('Total Comments:     ' + commentCount)
-    # print('Total Subscribers:  ' + subscriberCount)
-    # print('Total Videos:       ' + videoCount)
-
-
-# def getTikTok(account, url):
-#     page = requests.get(url)
-#     soup  = BeautifulSoup(url.text, 'lxml')
-
-#     data = soup.find('meta', {'name':'description'}).get('content')
-    
-#     print('\nTIKTOK DATA FOR ' + account)
-#     print(page)
-#     print(soup)
-#     print(data)
 
 # Building list to append to existing spreadsheet
 clinicaRow = [str(date), 
                 getInstagramData (clinica, clinicaInstagram)[0], " ", getInstagramData(clinica, clinicaInstagram)[1],
                 getFacebookData  (clinica, clinicaFacebook)[0],  getFacebookData (clinica, clinicaFacebook)[1],
                 getYoutubeData   (clinica, clinicaChannelID, clinicaAPIKey)[0], getYoutubeData(clinica, clinicaChannelID, clinicaAPIKey)[1],
-                getYoutubeData   (clinica, clinicaChannelID, clinicaAPIKey)[2], getYoutubeData(clinica, clinicaChannelID, clinicaAPIKey)[3]
+                getYoutubeData   (clinica, clinicaChannelID, clinicaAPIKey)[2]
              ]
 
 voirRow    = [str(date), 
                 getInstagramData (voir, voirInstagram)[0], " ", getInstagramData(voir, voirInstagram)[1],
                 getFacebookData  (voir, voirFacebook)[0],  getFacebookData (voir, voirFacebook)[1],
                 getYoutubeData   (voir, voirChannelID, voirAPIKey)[0], getYoutubeData(voir, voirChannelID, voirAPIKey)[1],
-                getYoutubeData   (voir, voirChannelID, voirAPIKey)[2], getYoutubeData(voir, voirChannelID, voirAPIKey)[3]
+                getYoutubeData   (voir, voirChannelID, voirAPIKey)[2]
              ]
-
-# look into getting youtube comments
 
 # Appending new data to each googlesheet
 clinica_google_sheet.append_row(clinicaRow)
@@ -148,11 +110,3 @@ print("\n[{}] records inserted into {} on {}...".format(len(clinicaRow), clinica
 print("\n[{}] records inserted into {} on {}...\n".format(len(voirRow), voir, newDate))
 
 print("It took [{}] seconds to execute...\n".format(round(time.time() - start, 2)))
-
-# getInstagramData(clinica, clinicaInstagram)
-# getFacebookData (clinica, clinicaFacebook)
-# getYoutubeData  (clinica, clinicaChannelID, clinicaAPIKey)
-
-# getInstagramData(voir, voirInstagram)
-# getFacebookData (voir, voirFacebook)
-# getYoutubeData(voir, voirChannelID, voirAPIKey)
