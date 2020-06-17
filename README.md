@@ -1,4 +1,4 @@
-# Social Scrape Bot
+# :space_invader: Social Scrape Bot
 
 > Python app to collect social media data and append daily results to sheets file on Google Drive. </br>
 > Scrape is running on a NodeJS server with a daily cron job. </br>
