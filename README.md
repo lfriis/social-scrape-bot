@@ -5,7 +5,7 @@
 > This data is collected from Instagram, Facebook, and YouTube to automate how a marketing department can track and collect data.
  ---
 ![Recordit GIF](http://g.recordit.co/j0OjNJ6QD9.gif)
-![Recordit GIF](http://g.recordit.co/Njs6PnQtpP.gif)
+![Recordit GIF](http://g.recordit.co/0nCCA7NR6o.gif)
 ![Recordit GIF](http://g.recordit.co/plxQdJPFKC.gif)
 
  
