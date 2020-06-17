@@ -6,7 +6,7 @@
  ---
  
 ## Console View
-![Recordit GIF](https://recordit.co/j0OjNJ6QD9)
+![Recordit GIF](http://g.recordit.co/j0OjNJ6QD9.gif)
  
 ### Framework, Packages, & APIs
 For this application to successfully compile by default, the following packages below are required:
