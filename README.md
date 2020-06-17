@@ -31,4 +31,5 @@ $ npm install express
 $ npm isntall node-cron shelljs nodemailer
 ```
 
-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Cloud-API-Logo.svg/1200px-Cloud-API-Logo.svg.png" height="20">
+- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Cloud-API-Logo.svg/1200px-Cloud-API-Logo.svg.png" height="20"> Google API Keys
+
