@@ -33,7 +33,7 @@ $ npm isntall node-cron shelljs nodemailer
   - <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/395_Youtube_logo-512.png" height="20"><a href="https://console.developers.google.com/apis/library/youtube.googleapis.com"> YouTube Data API</a>
 
 
-### .env File Structure
+### _.env_ File Structure
 
 ```shell
 CLINICA_API_KEY=****
@@ -42,7 +42,7 @@ CLINICA_CHANNEL_ID=****
 VOIR_API_KEY=****
 VOIR_CHANNEL_ID=****
 ```
-### Google_Drive_Secret.json File Structure
+### _Google_Drive_Secret.json_ File Structure
 ```shell
 {
   "type": "service_account",
