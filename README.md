@@ -27,6 +27,6 @@ $ pip install --upgrade google-api-python-client google-auth-httplib2 google-aut
 // Server
 $ npm install express
 
-// Cron
+// Cron & Email Notification
 $ npm isntall node-cron shelljs nodemailer
 ```
