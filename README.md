@@ -7,7 +7,6 @@
 > This data is collected from Instagram, Facebook, YouTube to help Marketing department track crucial data.
 
 ### Framework, Packages, & APIs
-This is app is running on:
 
 - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" height="20"> Python v3.8
 
