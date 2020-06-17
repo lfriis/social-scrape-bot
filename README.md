@@ -6,6 +6,8 @@
  ---
 ![Recordit GIF](http://g.recordit.co/j0OjNJ6QD9.gif)
 ![Recordit GIF](http://g.recordit.co/Njs6PnQtpP.gif)
+![Recordit GIF](http://g.recordit.co/plxQdJPFKC.gif)
+
  
 ### Framework, Packages, & APIs
 For this application to successfully compile by default, the following packages below are required:
