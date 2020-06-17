@@ -1,8 +1,8 @@
 # :space_invader: Social-Scrape-Bot
 
-> Python app to collect social media data and append daily results to sheets file on Google Drive. </br>
+> This python appication is used to collect social media data and append daily results to sheets file on Google Drive. </br>
 > Scrape is running on a NodeJS server with a daily cron job. </br>
-> This data is collected from Instagram, Facebook, YouTube to help Marketing department track crucial data.
+> This data is collected from Instagram, Facebook, and YouTube to automate how a marketing department can track and collect data.
  ---
 ### Framework, Packages, & APIs
 For this application to successfully compile by default, the following packages below are required:
