@@ -4,8 +4,6 @@
 > Scrape is running on a NodeJS server with a daily cron job. </br>
 > This data is collected from Instagram, Facebook, and YouTube to automate how a marketing department can track and collect data.
  ---
- 
-## Console View
 ![Recordit GIF](http://g.recordit.co/j0OjNJ6QD9.gif)
  
 ### Framework, Packages, & APIs
