@@ -9,6 +9,6 @@
 ### Framework Versions
 This is app is running on:
 - :snake:
-![alt text](https://nodejs.org/static/images/logo-hexagon-card.png =100x20)
+![](https://nodejs.org/static/images/logo-hexagon-card.png =100x20)
 Python v3.8.2
 - :green_book: Node v12.13.0
