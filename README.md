@@ -4,6 +4,10 @@
 > Scrape is running on a NodeJS server with a daily cron job. </br>
 > This data is collected from Instagram, Facebook, and YouTube to automate how a marketing department can track and collect data.
  ---
+ 
+## Console View
+![Recordit GIF](https://recordit.co/j0OjNJ6QD9)
+ 
 ### Framework, Packages, & APIs
 For this application to successfully compile by default, the following packages below are required:
 - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" height="20"> Python v3.8
