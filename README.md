@@ -1,10 +1,9 @@
 # Social Scrape Bot
 
 > Python app to collect social media data and append daily results to sheets file on Google Drive \n
-> Scrape is running on a NodeJS server with a daily cron job
----
+> Scrape is running on a NodeJS server with a daily cron job \n
 > This data is collected from Instagram, Facebook, YouTube to help Marketing department track crucial data.
-
+ ---
 ### Framework, Packages, & APIs
 
 - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" height="20"> Python v3.8
