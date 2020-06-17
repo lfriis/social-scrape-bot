@@ -14,7 +14,10 @@ This is app is running on:
 ```shell
 // Scraping
 $ pip install requests bs4
-$ bower install
+// Path
+$ pip install dotenv pathlib
+// Google Drive Auth
+$ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 ```
 
 
