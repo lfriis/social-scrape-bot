@@ -9,5 +9,5 @@
 ### Framework Versions
 This is app is running on:
 - :snake:
-<img src="https://nodejs.org/static/images/logo-hexagon-card.png" height="10">Python v3.8.2
+<img src="https://nodejs.org/static/images/logo-hexagon-card.png" height="50">Python v3.8.2
 - :green_book: Node v12.13.0
