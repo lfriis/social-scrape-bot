@@ -1,6 +1,6 @@
 /*
 
-Express Server to run python scrape on cron job
+Express Server to run python scrape and cron job
 
 */
 
@@ -23,7 +23,7 @@ app.use(express.json());
 
 // Cron job running scrape running everyday at 8:55AM ET
 console.log("Cron scheduler ready...");
-cron.schedule("02 23 * * *", function() 
+cron.schedule("23 00 * * *", function() 
 {
   console.log("---------------------");
   console.log("Running cron job...");
@@ -31,8 +31,8 @@ cron.schedule("02 23 * * *", function()
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "****",
-      pass: "****"
+      user: "larsenfriis1",
+      pass: "ScrapePassword1441*!"
     }
   });
 

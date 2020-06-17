@@ -31,8 +31,8 @@ newDate  = datetime.datetime.now()
 date  = datetime.date.today()
 start = time.time()
 
-clinica_google_sheet = client.open('Social Scrape Test').get_worksheet(0)
-voir_google_sheet    = client.open('Social Scrape Test').get_worksheet(1)
+clinica_google_sheet = client.open('SOCIAL MEDIA TRACKING').get_worksheet(0)
+voir_google_sheet    = client.open('SOCIAL MEDIA TRACKING').get_worksheet(1)
 
 # Setting up Social Media URLs
 clinica          = "THE CLINICA"
