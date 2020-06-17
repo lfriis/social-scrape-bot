@@ -8,7 +8,7 @@
 
 ## Framework Versions
 This is app is running on:
-- :snake: '''Python
+- :snake:
+!(https://nodejs.org/static/images/logo-hexagon-card.png)
 Python v3.8.2
-'''
 - :green_book: Node v12.13.0
