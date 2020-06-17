@@ -6,9 +6,9 @@
 ---
 > This data will collected from Instagram, Facebook, YouTube to help Marketing department track crucial data.
 
-## Framework Versions
+### Framework Versions
 This is app is running on:
 - :snake:
-![alt text](https://nodejs.org/static/images/logo-hexagon-card.png "Test 1234")
+![alt text](https://nodejs.org/static/images/logo-hexagon-card.png "Test 1234" = 100x20)
 Python v3.8.2
 - :green_book: Node v12.13.0
