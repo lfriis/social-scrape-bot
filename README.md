@@ -6,7 +6,7 @@
 ---
 > This data is collected from Instagram, Facebook, YouTube to help Marketing department track crucial data.
 
-### Framework Versions & Required Packages
+### Framework, Packages, & APIs
 This is app is running on:
 
 - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" height="20"> Python v3.8
@@ -30,3 +30,5 @@ $ npm install express
 // Cron & Email Notification
 $ npm isntall node-cron shelljs nodemailer
 ```
+
+- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Cloud-API-Logo.svg/1200px-Cloud-API-Logo.svg.png" height="20">
