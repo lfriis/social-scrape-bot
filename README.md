@@ -1,10 +1,10 @@
 # Social Scrape Bot
 
-> Python app to collect social media data and append daily results to Google Sheets file
+> Python app to collect social media data and append daily results to sheets file on Google Drive
 ---
 > Scrape is running on a NodeJS server with a daily cron job
 ---
-> This data will collected from Instagram, Facebook, YouTube to help Marketing department track crucial data.
+> This data is collected from Instagram, Facebook, YouTube to help Marketing department track crucial data.
 
 ### Framework Versions
 This is app is running on:
