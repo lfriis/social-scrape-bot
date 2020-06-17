@@ -15,10 +15,10 @@ This is app is running on:
 // Scraping
 $ pip install requests bs4
 
-// Path
+// Pathing
 $ pip install dotenv pathlib
 
-// Google Drive Auth
+// Google Drive Authentication
 $ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 ```
 
