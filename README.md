@@ -9,4 +9,4 @@
 ## Framework Versions
 This is app is running on:
 - :snake: Python v3.8.2
-- Node   v12.13.0
+- :green_book: Node   v12.13.0
