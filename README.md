@@ -14,11 +14,19 @@ This is app is running on:
 ```shell
 // Scraping
 $ pip install requests bs4
+
 // Path
 $ pip install dotenv pathlib
+
 // Google Drive Auth
 $ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 ```
 
-
 - <img src="https://nodejs.org/static/images/logo-hexagon-card.png" height="20"> Node v12
+```shell
+// Server
+$ npm install express
+
+// Cron
+$ npm isntall node-cron shelljs nodemailer
+```
