@@ -32,7 +32,7 @@ $ npm install express
 // Cron and Email Notification
 $ npm isntall node-cron shelljs nodemailer
 ```
-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Cloud-API-Logo.svg/1200px-Cloud-API-Logo.svg.png" height="20"> Google API
+- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Cloud-API-Logo.svg/1200px-Cloud-API-Logo.svg.png" height="20"> Google API </br>
 The following APIs are used to retrieve and insert scrape data
   - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Logo_of_Google_Drive.svg/1024px-Logo_of_Google_Drive.svg.png" height="20"><a href="https://console.developers.google.com/apis/library/drive.googleapis.com"> Drive API</a>
   - <img src="https://seeklogo.com/images/G/google-sheets-logo-70C2B2CA6A-seeklogo.com.png" height="20"><a href="https://console.developers.google.com/apis/library/sheets.googleapis.com">   Sheets API</a> 
