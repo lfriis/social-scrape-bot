@@ -4,7 +4,7 @@
 > Scrape is running on a NodeJS server with a daily cron job. </br>
 > This data is collected from Instagram, Facebook, and YouTube to automate how a marketing department can track and collect data.
 
-> Server deployed to Raspberry Pi
+> Server deployed to <img src="https://www.raspberrypi.org/app/uploads/2011/10/Raspi-PGB001.png" height="20"> Raspberry Pi
  ---
 ![Recordit GIF](http://g.recordit.co/j0OjNJ6QD9.gif)
 ![Recordit GIF](http://g.recordit.co/0nCCA7NR6o.gif)
