@@ -5,6 +5,7 @@
 > This data is collected from Instagram, Facebook, and YouTube to automate how a marketing department can track and collect data.
  ---
 ![Recordit GIF](http://g.recordit.co/j0OjNJ6QD9.gif)
+![Recordit GIF](http://g.recordit.co/Njs6PnQtpP.gif)
  
 ### Framework, Packages, & APIs
 For this application to successfully compile by default, the following packages below are required:
