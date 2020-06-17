@@ -35,7 +35,7 @@ $ npm isntall node-cron shelljs nodemailer
   - <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/395_Youtube_logo-512.png" height="20"><a href="https://console.developers.google.com/apis/library/youtube.googleapis.com"> YouTube Data API</a>
 ---
 ### _.env_ File Structure
-
+File that holds confidential keys:
 ```shell
 CLINICA_API_KEY=****
 CLINICA_CHANNEL_ID=****
@@ -45,6 +45,7 @@ VOIR_CHANNEL_ID=****
 ```
 ---
 ### _Google_Drive_Secret.json_ File Structure
+After creating credentials to Google Drive API, a JSON file will be downloaded to your machine:
 ```shell
 {
   "type": "service_account",
