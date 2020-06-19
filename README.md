@@ -53,7 +53,7 @@ After creating credentials to Google Drive API, a JSON file will be downloaded t
 ```shell
 {
   "type": "service_account",
-  "project_id": ****",
+  "project_id": ****,
   "private_key_id": ****,
   "private_key": ****,
   "client_email": ****,
