@@ -41,6 +41,9 @@ The following APIs are used to retrieve and insert scrape data:
 ### _.env_ File Structure
 File that holds confidential keys:
 ```shell
+USERNAME=****
+PASSWORD=****
+
 CLINICA_API_KEY=****
 CLINICA_CHANNEL_ID=****
 
