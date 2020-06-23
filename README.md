@@ -51,7 +51,7 @@ VOIR_API_KEY=****
 VOIR_CHANNEL_ID=****
 ```
 ---
-### _Google_Drive_Secret.json_ File Structure
+### _google_grive_secret.json_ File Structure
 After creating credentials to Google Drive API, a JSON file will be downloaded to your machine:
 ```shell
 {
