@@ -88,14 +88,14 @@ def getYoutubeData(account, channel_id, api_key):
     return youtubeData
 
 # Building list to append to existing spreadsheet
-clinicaRow = [str(date), 
+clinicaRow = [str(date.strftime("%B %d")), 
                 getInstagramData (clinica, clinicaInstagram)[0], " ", getInstagramData(clinica, clinicaInstagram)[1],
                 getFacebookData  (clinica, clinicaFacebook)[0],  getFacebookData (clinica, clinicaFacebook)[1],
                 getYoutubeData   (clinica, clinicaChannelID, clinicaAPIKey)[0], getYoutubeData(clinica, clinicaChannelID, clinicaAPIKey)[1],
                 getYoutubeData   (clinica, clinicaChannelID, clinicaAPIKey)[2]
              ]
 
-voirRow    = [str(date), 
+voirRow    = [str(date.strftime("%B %d")), 
                 getInstagramData (voir, voirInstagram)[0], " ", getInstagramData(voir, voirInstagram)[1],
                 getFacebookData  (voir, voirFacebook)[0],  getFacebookData (voir, voirFacebook)[1],
                 getYoutubeData   (voir, voirChannelID, voirAPIKey)[0], getYoutubeData(voir, voirChannelID, voirAPIKey)[1],

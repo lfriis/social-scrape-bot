@@ -23,7 +23,7 @@ app.use(express.json());
 
 // Cron job running scrape running everyday at 8:55AM ET
 console.log("Cron scheduler ready...");
-cron.schedule("23 00 * * *", function() 
+cron.schedule("51 20 * * *", function() 
 {
   console.log("---------------------");
   console.log("Running cron job...");
