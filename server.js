@@ -19,11 +19,16 @@ try
 catch(e) { console.log("Errors including packages: " + (e)); };
 
 // Including required middleware
+require('dotenv').config();
+
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
+
 app.use(express.json());
 
 // Cron job running scrape running everyday at 8:55AM ET
 console.log("Cron scheduler ready...");
-cron.schedule("51 20 * * *", function() 
+cron.schedule("0 */1 * * * *", function() 
 {
   console.log("---------------------");
   console.log("Running cron job...");
@@ -31,8 +36,8 @@ cron.schedule("51 20 * * *", function()
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "larsenfriis1",
-      pass: "ScrapePassword1441*!"
+      user: username,
+      pass: password
     }
   });
 
