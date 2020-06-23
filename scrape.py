@@ -106,7 +106,13 @@ voirRow    = [str(date.strftime("%B %d")),
 clinica_google_sheet.append_row(clinicaRow)
 voir_google_sheet.append_row(voirRow)
 
-print("\n[{}] records inserted into {} on {}...".format(len(clinicaRow), clinica, newDate))
-print("\n[{}] records inserted into {} on {}...\n".format(len(voirRow), voir, newDate))
+# Writing to log file on Raspberry Pi Server
+file = open('log.txt', 'a')
+print("Date: {}".format(date.strftime("%B %d/%Y")), file=file)
+print("\n[{}] records inserted into {} on {}...".format(len(clinicaRow), clinica, newDate), file=file)
+print("[{}] records inserted into {} on {}...\n".format(len(voirRow), voir, newDate), file=file)
+file.close()
 
+print("\nInserted into Google Sheets...")
+print("Log updated...")
 print("It took [{}] seconds to execute...\n".format(round(time.time() - start, 2)))
