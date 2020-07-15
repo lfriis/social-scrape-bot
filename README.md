@@ -30,7 +30,7 @@ $ pip install --upgrade google-api-python-client google-auth-httplib2 google-aut
 $ npm install express
 
 // Cron and Email Notification
-$ npm isntall node-cron shelljs nodemailer
+$ npm install node-cron shelljs nodemailer
 ```
 - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Cloud-API-Logo.svg/1200px-Cloud-API-Logo.svg.png" height="20"> Google API </br>
 The following APIs are used to retrieve and insert scrape data:
