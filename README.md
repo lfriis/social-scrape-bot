@@ -9,9 +9,6 @@
 ![Recordit GIF](http://g.recordit.co/j0OjNJ6QD9.gif)
 ![Recordit GIF](http://g.recordit.co/0nCCA7NR6o.gif)
 
-### Log Output Examples
-<img src="https://github.com/lfriis/Social-Scrape-Bot/blob/master/logs-outputs.png" height="600">
-
 ### Framework, Packages, & APIs
 For this application to successfully compile by default, the following packages below are required:
 - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" height="20"> Python v3.8
@@ -70,3 +67,6 @@ After creating credentials to Google Drive API, a JSON file will be downloaded t
   "client_x509_cert_url": ****
 }
 ```
+
+### Log Output Examples
+<img src="https://github.com/lfriis/Social-Scrape-Bot/blob/master/logs-outputs.png" height="600">
