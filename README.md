@@ -10,7 +10,7 @@
 ![Recordit GIF](http://g.recordit.co/0nCCA7NR6o.gif)
 
 ### Log Output Examples
-<img src="https://github.com/lfriis/Social-Scrape-Bot/blob/master/logs-outputs.png" height="400" width="150">
+<img src="https://github.com/lfriis/Social-Scrape-Bot/blob/master/logs-outputs.png" height="600">
 
 ### Framework, Packages, & APIs
 For this application to successfully compile by default, the following packages below are required:
