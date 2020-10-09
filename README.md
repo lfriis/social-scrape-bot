@@ -1,7 +1,7 @@
 # :space_invader: Social-Scrape-Bot
 
 > This python application is used to collect social media data and append daily results to sheets file on Google Drive. </br>
-> Scrape is running on an ExpressJS server with a daily cron job. </br>
+> Scrape is running on an ExpressJS server with a daily cron job that fires at 9:00AM ET. </br>
 > This data is collected from Instagram, Facebook, and YouTube to automate how a marketing department can track and collect data.
 
 
